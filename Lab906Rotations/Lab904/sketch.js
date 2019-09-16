@@ -3,50 +3,34 @@
 
 //  The setup function function is called once when your program begins
 var ships =[]
-function setup(){
-  var.cnv = createcanvas(800,800);
-  cnv.position(windowWidth-width)/2,30;
-  backround(0,0,0);
+var attractor, repeller, mainBall, paddle;
+
+function setup() {
+  var cnv = createCanvas(800,800);
+  cnv.position((windowWidth-width)/2,30);
+  background(0,0,0);
   loadShips(10);
 }
 
 function draw() {
+  background(0, 0, 0, 50)
+  mainBall.run();
   runShips();
+  runPaddle();
 }
 
-function loadShips(n){
+function loadShips(n) {
+  fill(80, 46, 255)
+  mainShips = new Ships(width/2, height/2, random(-2,2), ramdom(-2,2), 40, 40)
+  paddle = new Paddle(random(width), random(height), 20, 10)
   for(var i = 0; i<n; i++)
-  balls[i] = new Ship (random (width), random (height))
+    ships[i] = new Ship(random(width), random(height), random(-5,5), random(-5,5), random(0,TWO_PI))
 }
-}
-function runShips(n){
-  for(var i = 0; i<balls.length; i++){
-  balls[i].run();
+function runShips(){
+  for(var i = 0; i < ships.length; i++){
+  ships[i].run();
   }
 }
-class Ship{
-  constructor(x,y,dx,dy){
-    this.loc = createVector(x,y);
-    this.vel = createVector(dx,dy);
-    this.acc = createVector(0,0);
-    this.clr = color (random(255), random(255), random(255));
+function runPaddle() {
+
 }
-run(){
-  this.checkEdges();
-  this.update();
-  this.render();
-}
-checkEdges(){
-  this.vel(dx)=-1*this.vel(dx)
-  this.vel(dx) = -1*this.vel(dx);
-  this.vel(dy) = -1*this.vel(dy);
-  this.vel(dy)=this.vel(dy)
-}
-  update(){
-    this.loc.x=this.loc.x+this.dx;
-    this.loc.y=this.loc.y+this.vel.dy;
-  }
-  render(){
-    fill(this.clr);
-    ellipse(this.loc.x, this.loc.y)
-  }
