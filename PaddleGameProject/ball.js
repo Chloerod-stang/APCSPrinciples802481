@@ -1,17 +1,13 @@
+//  Paddle game Ball
 
-
-
+//   chloe rocks
+//   918
 class Ball{
   constructor(x,y,dx,dy){
     this.loc = createVector(x,y);
     this.vel = createVector(dx,dy);
     this.acc = createVector(0,0);
     this.clr = color (random(255), random(255), random(255));
-}
-run(){
-  this.checkEdges();
-  this.update();
-  this.render();
 }
 run(){
   this.checkEdges();
@@ -33,6 +29,5 @@ checkEdges(){
     fill(this.clr);
     ellipse(this.loc.x, this.loc.y)
   }
-loadBalls(n){
-  for()
-}
+
+}//+++++++++++++++++++++++++++++++++++++++++++++++ End class

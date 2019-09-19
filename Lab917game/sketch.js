@@ -8,10 +8,8 @@ function setup() {
   background(5, 5, 5);
   fill(200, 30, 150);
 
-
 }
-
-//  The draw function is called @ 30 fps
-function draw() {
-
+function draw(){
+  fill(150,100,300)
+  ellipse(100, 100, 120, 120);
 }
