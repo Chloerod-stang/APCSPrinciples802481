@@ -33,8 +33,6 @@ this.clr= color(random(255), random (255), random(255))
     }
   }
 
-
-
   render(){
     fill(this.clr);
     ellipse(this.loc.x, this.loc.y, 50, 50);
