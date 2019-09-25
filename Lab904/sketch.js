@@ -8,7 +8,8 @@ function setup(){
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
   fill(200, 30, 150);
-
+  loadBalls(10);
+}
 //   b1 = new Ball(random(width),random(height),random(-3,3),random(-3,3));
 //   b2 = new Ball(random(width),random(height),random(-3,3),random(-3,3))
 // }
@@ -16,11 +17,12 @@ function setup(){
 //  The draw function is called @ 30 fps
 function draw(){
     background(5, 5, 5);
-  b1.run();
-  b2.run();
+    for(var i = 0; i < balls.length; i++)
+    balls[i].run();
 }
+
+
 function loadBalls(n){
   for(var i = 0; i < 10; i++)
-  balls[i] = newBall(100, 100, -2, -3)
-}
+  balls[i] = new Ball(random(width), random(height), random(-3,3), random(-3,3))
 }
