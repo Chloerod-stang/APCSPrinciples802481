@@ -2,12 +2,21 @@
 // 	Date or version number
 
 //  The setup function function is called once when your program begins
+<<<<<<< HEAD
 var ship =[]
 var attractor;
 var repeller;
 var loadShip;
 var runShip;
 var mainShip;
+=======
+var ships =[]
+var attractor;
+var repeller;
+// var mainBall;
+// var paddle;
+// var mainShips;
+>>>>>>> 5fd817d1ce30ac982ccc9de3d5f32ac87b895845
 
 function setup() {
   var cnv = createCanvas(800,800);

@@ -27,7 +27,11 @@ class Ship{
   update(){
       this.loc.add(this.vel);
       // this.vel.add(this.acc);
+<<<<<<< HEAD
       // this.angle += TWO_PI * 0.01
+=======
+      this.angle += TWO_PI * 0.01
+>>>>>>> 5fd817d1ce30ac982ccc9de3d5f32ac87b895845
   }
 
   render(){
