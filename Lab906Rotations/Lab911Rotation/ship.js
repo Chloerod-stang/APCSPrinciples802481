@@ -7,7 +7,7 @@ class Ship{
   constructor(x,y,dx,dy){
     this.loc = createVector(x,y);
     this.vel = createVector(dx,dy);
-    this.acc = createVector(0,0);
+    this.acc = createVector(0,.1);
     this.clr = color(random(255), random(255), random(255));
   }
 
@@ -18,20 +18,27 @@ class Ship{
   }
 
   checkEdges(){
-    this.vel = -1*this.vel;
-    // this.vel(dx) = -1*this.vel(dx);
-    this.vel = -1*this.vel;
-    // this.vel(dy)=this.vel(dy)
+    if (this.loc.x> width){
+      this.vel.x = -this.vel.x
+    }
+
+    if (this.loc.x < 0){
+      this.vel.x = -this.vel.x
+    }
+
+    if (this.loc.y > height){
+      this.vel.y = -this.vel.y
+    }
+
+    if (this.loc.y<0){
+      this.vel.y = -this.vel.y
+    }
   }
 
   update(){
-      this.loc.add(this.vel);
-      // this.vel.add(this.acc);
-<<<<<<< HEAD
+    this.vel.add(this.acc)
+    this.loc.add(this.vel)
       // this.angle += TWO_PI * 0.01
-=======
-      this.angle += TWO_PI * 0.01
->>>>>>> 5fd817d1ce30ac982ccc9de3d5f32ac87b895845
   }
 
   render(){
@@ -39,9 +46,7 @@ class Ship{
     translate(this.loc)
     rotate(this.angle)
     fill(this.clr);
-    triangle(-8, 0, 8, 0, 0, 15)
+    triangle(5, 4, 8, 3)
     pop()
   }
-}
-
 }// ++++++++++++++++++++++++++++++++++++  end ship
