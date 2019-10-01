@@ -33,6 +33,5 @@ checkEdges(){
     fill(this.clr);
     ellipse(this.loc.x, this.loc.y)
   }
-loadBalls(n){
-  for()
+
 }

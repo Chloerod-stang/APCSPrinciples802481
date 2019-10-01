@@ -1,4 +1,4 @@
-class paddle
+class Paddle{
 constructor (x, y, w, h) {
   this.loc = createVector(x, y, w, h)
 }
@@ -22,7 +22,7 @@ checkEdges(){
   if (this.loc.y < 0) {
     this.loc.y = height
 }
-
+}
 Update(){
 
 
