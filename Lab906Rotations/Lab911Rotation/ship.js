@@ -7,7 +7,7 @@ class Ship{
   constructor(x,y,dx,dy){
     this.loc = createVector(x,y);
     this.vel = createVector(dx,dy);
-    this.acc = createVector(0,.1);
+    this.acc = createVector(0,0);
     this.clr = color(random(255), random(255), random(255));
   }
 
@@ -42,11 +42,12 @@ class Ship{
   }
 
   render(){
+    this.angle = this.vel.heading() + PI/2;
     push()
-    translate(this.loc)
-    rotate(this.angle)
-    fill(this.clr);
-    triangle(5, 4, 8, 3)
-    pop()
+      translate(this.loc.x, this.loc.y);
+      rotate(this.angle);
+      fill(this.clr);
+      triangle(-5, 5, 5, 5, 0, -10)
+    pop();
   }
 }// ++++++++++++++++++++++++++++++++++++  end ship
