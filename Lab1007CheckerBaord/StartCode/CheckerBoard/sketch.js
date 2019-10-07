@@ -3,10 +3,10 @@
 **
 **
 */
-
-
+var squares
+var loadSquares
 //  Global variables
-// Declare squares[] as a global variable
+squares[]// Declare squares[] as a global variable
 
 
 // put setup code here
@@ -14,6 +14,7 @@ function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
   background(235);
+
   // Create a function that loads the squares into an
   // array of square objects and call the function
 
