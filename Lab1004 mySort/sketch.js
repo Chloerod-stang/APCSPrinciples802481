@@ -13,5 +13,9 @@ function setup() {
 
 //  The draw function is called @ 30 fps
 function draw() {
+  for(var i = arr.length; 1>=0; i--){
+    for(var j = 1; j <=1; j++){
 
+}
+}
 }
