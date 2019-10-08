@@ -6,6 +6,7 @@
 
 
 //  Global variables
+loadSquares
 var squares = []  // declare b1 as a global variable
 
 
@@ -17,10 +18,12 @@ function setup() {
   loadSquares();
   //  traverse array and run each ball
   for(var i = 0; i < squares.length; i++){
+    for(var j = 0; j<=1; j++){
    squares[i].render();
+   squares[j].render();
   }
 }
-
+}
 
 function loadSquares(){
 
