@@ -19,6 +19,7 @@ function setup() {
   // array of square objects and call the function
 
   loadSquares();
+  run.squares();
   //  traverse array and run each square
 
 }
@@ -26,6 +27,11 @@ function setup() {
 
 
 function loadSquares(){
+  for(var i = 0; var i < 5; i++){
+    for(var j = 0; j< 8 j++)
+    if(alt%2--0)
+
+  }
   //  create a square object and push it into the squares array
 
   //  create a loop that will push 64 squares into an array
