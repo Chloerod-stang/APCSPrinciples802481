@@ -19,7 +19,7 @@ function setup() {
   // array of square objects and call the function
 
   loadSquares();
-  run.squares();
+  runSquares();
   //  traverse array and run each square
 
 }
