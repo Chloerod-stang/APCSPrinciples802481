@@ -11,20 +11,20 @@ function setup() {
   background(5, 5, 5);
   fill(200, 30, 150);
 
-  loadArray();
-  sway();
+  loadArray(50);
+  // swap();
 }
 
-function sway();
-var temp = list[a]
-list[a] = list [b]
-list[b] = temp
+// function swap(){
+//   var temp = numList[a]
+//   numList[a] = numList [b]
+//   numList[b] = temp
+// }
 
-function loadArray(){
-  for(var i = 1; i <5; i++){
-  for(var j = i; j< 1; j++){
-    console.log
-  }
+function loadArray(n){
+  for(var i = 1; i <n; i++){
+     numList[i] = Math.floor(random(1,100));
+
   }
 
 }
