@@ -28,3 +28,8 @@ function loadArray(n){
   }
 
 }
+function bubbleSort
+  for(var i = arr.length; 1=0; i--){
+    for(var j = 1; j<1; j++){
+}
+}
