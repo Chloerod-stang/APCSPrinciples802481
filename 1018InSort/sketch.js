@@ -3,7 +3,7 @@
 //  This is a comment
 //  The setup function function is called once when your program begins
 
-var numList = [];
+var arr = [];
 
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -23,13 +23,21 @@ function setup() {
 
 function loadArray(n){
   for(var i = 1; i <n; i++){
-     numList[i] = Math.floor(random(1,100));
+     arr[i] = Math.floor(random(1,100));
 
   }
 
 }
-function insertionSort
-    for(var i = arr.length; 1=0; i--){
-    for(var j = 1; j<1; j++){
+function insertionSort(){
+    for(var i = 1; i < arr.length; i++){
+    for(var j = i; j>0; j--){
 }
+}
+}
+function swap(){
+  if(arr[j] < arr[j-1]){
+     temp = arr[j];
+    arr[j] = arr[j-1];
+  arr[j-1] = temp;
+     }
 }
