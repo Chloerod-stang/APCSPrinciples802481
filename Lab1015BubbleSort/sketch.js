@@ -39,7 +39,7 @@ function bubbleSort(){
 }
 
 function swap(arr, j, i){
-  var temp = arr[i]
-  arr[i] = arr [j]
-  arr[j] = tenp
+  var temp = arr[j-1]
+  arr[j-1] = arr [j]
+  arr[j] = temp
 }
