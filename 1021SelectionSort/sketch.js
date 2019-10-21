@@ -1,5 +1,5 @@
 //  Chloe Rodriguez Stangle
-// 	10-15-19
+// 	10-21-19
 //  This is a comment
 //  The setup function function is called once when your program begins
 
@@ -14,7 +14,7 @@ function setup() {
   background(5, 5, 5);
   fill(200, 30, 150);
 
-  loadArray(100, 1, 100);
+  loadArray(10, 1, 100);
   insertionSort();
 }
 
@@ -23,14 +23,24 @@ function loadArray(howMany, minValue, maxValue) {
   for (var i = 1; i <= howMany; i++) {
     arr[i] = Math.floor(random(minValue, maxValue));
   }
+  print(arr)
 }
 
-function insertionSort() {
-  console.log("BEFORE=", arr)
-  for (var i = 1; i < arr.length; i++) {
-    for (var j = i; j > 0; j--) {
-
+function selectionSort() {
+  print("BEFORE=", arr)
+  for (var i = 0; i < arr.length -1; i++) {
+    var index = i;
+    for (var j = i +1; j < arr.length; j++) {
+      if (arr[j] < arr[index]){
+  index = j;
       // swapping code
+      var smallerNumber = arr[index];
+         arr[index] = arr[i];
+         arr[i] = smallerNumber;
+         }
+      }
+   }
+//change for selection sort
       compares = compares+1;
       if (arr[j] < arr[j - 1]) {
         swaps = swaps+1;
