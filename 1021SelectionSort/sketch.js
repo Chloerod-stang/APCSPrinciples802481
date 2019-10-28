@@ -16,6 +16,9 @@ function setup() {
 
   loadArray(10, 1, 100);
   selectionSort();
+  console.log("AFTER=" + arr);
+  console.log("compares" + compares);
+  console.log("swaps" + swaps);
 }
 
 // n numbers between 1 and max
@@ -36,12 +39,8 @@ function selectionSort() {
       }
     }
       // swapping code
-      var smallerNumber = arr[index];
-         arr[index] = arr[i];
-         arr[i] = smallerNumber;
-         }
-      }
-
-  console.log("AFTER=" + arr);
-  console.log("compares" + compares);
-  console.log("swaps" + swaps);
+    var smallerNumber = arr[index];
+    arr[index] = arr[i];
+    arr[i] = smallerNumber;
+  }
+}
