@@ -1,5 +1,5 @@
-//  Your Name
-// 	Date or version number
+//  Chloe Rodriguez Stangle
+// 	10-30
 //  This is a comment
 //  The setup function function is called once when your program begins
 var bars = [];
