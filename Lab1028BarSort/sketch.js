@@ -20,17 +20,18 @@ function draw() {
 bubbleSort()
 drawList(bars)
 }
-function loadBars(n){
-  for (var j=0; j<bars.length-1; j++){
-    
+function bubbleSort(){
+  for (var i=0; i<bars.length-1; i++){
+    if(bars[j].h>bars[j+1].h){
+      swap(bars,j,j+1);
     }
   }
 }
-function drawList(listBars){
-  for(var i = arr.length - 1; i > 0; i--){
-      for(var j = 0; j<1; j++){
-        swap(arr, j, j+1)
-
-}
-}
+function loadBars(){
+  for(var x = 0; x<32; x++){
+    var w=int(random(1,32));
+    bars[x] =new Bar(25'x, 800-(25'w),25,(25'w));
+                                          }
+  }
+  
 }
