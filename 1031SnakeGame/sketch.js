@@ -28,7 +28,7 @@ function checkTangled(){
 }
 
 function startNewRound(){
-  update(20); //update score by 20
+  update(30); //update score by 20
   //make snake grow by one segment
   //move food to a random place
 
