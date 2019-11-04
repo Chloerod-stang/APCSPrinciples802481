@@ -3,7 +3,7 @@
 //  This is a comment
 //  The setup function function is called once when your program begins
 var score = 0;
-var snake;
+var snake =[];
 
 
 function setup() {
@@ -12,11 +12,14 @@ function setup() {
   background(5, 5, 5);
   fill(200, 30, 150);
   snake=new Snake(10,15,15,15);
+  frameRate(5);
 }
 
 //  The draw function is called @ 30 fps
 function draw() {
+  background(20, 50, 100);
   snake.run();
+
   //food.run();
   //newGame();
   //startNewRound();
@@ -28,7 +31,7 @@ function checkTangled(){
 }
 
 function startNewRound(){
-  update(30); //update score by 20
+  update(20); //update score by 20
   //make snake grow by one segment
   //move food to a random place
 
@@ -41,6 +44,14 @@ function newGame(){
 }
 
 function keyPressed(){
+  if (keyCode === LEFT_ARROW) {
+    snake.vel.x= -1;
+    snake.vel.y= 0;
+
+  } else if (keyCode === RIGHT_ARROW) {
+    snake.vel.x=1;
+    snake.vel.y=0;
+  }
   //check for "UP_ARROW" and "DOWN_ARROW"
   //adjust snake vel
 }
@@ -48,6 +59,7 @@ function keyPressed(){
 function run(){
   update();
   render();
+  checkEdges();
 }
 
 function gotFood(){

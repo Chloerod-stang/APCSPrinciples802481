@@ -26,7 +26,7 @@ checkEdges(){
 }
   update(){
 
-    this.loc.x=this.loc.x+this.dx;
+    this.loc.x=this.loc.x+this.vel.dx;
     this.loc.y=this.loc.y+this.vel.dy;
   }
   render(){
