@@ -52,7 +52,16 @@ function keyPressed(){
     snake.vel.x=1;
     snake.vel.y=0;
   }
-  //check for "UP_ARROW" and "DOWN_ARROW"
+
+  if (keyCode === DOWN_ARROW) {
+    snake.vel.x= 0;
+    snake.vel.y= 1;
+
+  } else if (keyCode === UP_ARROW) {
+    snake.vel.x= 0;
+    snake.vel.y= -1;
+  }
+
   //adjust snake vel
 }
 

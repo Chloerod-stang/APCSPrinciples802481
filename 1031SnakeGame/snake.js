@@ -4,6 +4,8 @@ class Snake{
     this.vel = createVector(1,0);
     this.w = w;
     this.h = h;
+    this.clr = color(random(255), random(255), random(255));
+    this.body = [];
   }
 
   run(){
