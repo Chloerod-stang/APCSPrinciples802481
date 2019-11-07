@@ -19,8 +19,6 @@ function setup() {
 function draw() {
   background(20, 50, 100);
   snake.run();
-  for(var i - 0; i< snake.body.length; i++)
-
   //food.run();
   //newGame();
   //startNewRound();
