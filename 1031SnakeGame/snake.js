@@ -6,6 +6,7 @@ class Snake{
     this.h = h;
     this.clr = color(random(255), random(255), random(255));
     this.body = [];
+    this.head
   }
 
   run(){
