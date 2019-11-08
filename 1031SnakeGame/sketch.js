@@ -1,9 +1,10 @@
-//  Your Name
-// 	Date or version number
+//  Chloe Rodriguez Stangle
+// 	11-8-19
 //  This is a comment
 //  The setup function function is called once when your program begins
 var score = 0;
 var snake =[];
+var gameState
 
 
 function setup() {
@@ -12,13 +13,18 @@ function setup() {
   background(5, 5, 5);
   fill(200, 30, 150);
   snake=new Snake(10,15,15,15);
-  frameRate(5);
 }
 
 //  The draw function is called @ 30 fps
 function draw() {
   background(20, 50, 100);
   snake.run();
+  frameRate(15);
+  if (gamestate === 1){
+    if(keyPressed === true){
+      gamestate = 3;
+    }
+  }
   //food.run();
   //newGame();
   //startNewRound();
