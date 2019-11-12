@@ -4,7 +4,8 @@
 //  The setup function function is called once when your program begins
 var score = 0;
 var snake =[];
-var gameState
+var gameState = [];
+
 
 
 function setup() {
@@ -20,9 +21,9 @@ function draw() {
   background(20, 50, 100);
   snake.run();
   frameRate(15);
-  if (gamestate === 1){
+  if (gameState === 1){
     if(keyPressed === true){
-      gamestate = 3;
+      gameState = 3;
     }
   }
   //food.run();
