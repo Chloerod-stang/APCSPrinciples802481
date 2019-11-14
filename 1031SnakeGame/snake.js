@@ -1,9 +1,11 @@
 class Snake{
-  constructor (x,y,w,h){
+  constructor (x,y,w,h,size){
+    this.segments = []
     this.loc=createVector(x,y);
     this.vel = createVector(1,0);
     this.w = w;
     this.h = h;
+    this.size=size
     this.clr = color(random(255), random(255), random(255));
     this.body = [];
     this.head
