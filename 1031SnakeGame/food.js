@@ -16,6 +16,7 @@ class Food{
     react(this.loc.x*this.w,this.loc.y*this.w, this.w, this.w)
   }
   update(){
-    
+    if(snake.segments[0].x === this.loc.x &&
+       
   }
 }
