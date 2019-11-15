@@ -5,15 +5,21 @@
 var score = 0;
 var snake =[];
 var gameState = [];
-
-
+var numCol;
+var snakeWidth;
 
 function setup() {
   var cnv = createCanvas(800, 800);
+
+  snakeWidth = 25;
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
+  frameRate(13;
+  endSnake = "no");
+  cle
   fill(200, 30, 150);
-  snake=new Snake(10,15,15,15);
+  snake=new Snake(width/2, height/2, 0, 0, snakeWidth, color(random(255), random(255), random(255));
+  food = new Food(int(random0,775)), int(random(0,775)), color(random(0,225))
 }
 
 //  The draw function is called @ 30 fps
