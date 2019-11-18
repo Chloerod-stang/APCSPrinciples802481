@@ -18,8 +18,8 @@ function setup() {
   frameRate(13);
   endSnake = "no";
   fill(200, 30, 150);
-  snake = new Snake (400, 400, 10, 10, snakeWidth, colorrandom(255), random(255), random(255));
-  food = new Food(int(random0,775)), int(random(0,775)), color(random(0,225))
+  snake = new Snake (400, 400, 10, 10, snakeWidth, color(random(255), random(255), random(255)));
+  food = new Food(int(random(0,775)), int(random(0,775)), color(random(0,225)))
 }
 
 //  The draw function is called @ 30 fps
