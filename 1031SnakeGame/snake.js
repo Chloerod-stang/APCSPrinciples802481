@@ -22,11 +22,6 @@ class Snake{
 //    fill(200,0,150)
   //  rect(this.loc.x*this.w, this.loc.y*this.h, this.w, this.h)
 
-
-
-
-  }//end of snake class
-
   update(){
     this.segments[0].add(this.vel)
     //this.loc.x=this.loc.x+this.vel.x;
@@ -47,4 +42,5 @@ render(){
         gameState = 3
       }
   }
-//end of snake class
+
+  }//end of snake class

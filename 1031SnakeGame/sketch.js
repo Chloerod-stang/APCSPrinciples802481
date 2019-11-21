@@ -25,7 +25,11 @@ function setup() {
 //  The draw function is called @ 30 fps
 function draw() {
   background(20, 50, 100);
-  snake.run();
+  runObjects();
+    if(food.isEaten()){
+      food = //finish
+    }
+
   frameRate(15);
   if (gameState === 1){
     if(keyPressed === true){
@@ -44,6 +48,11 @@ function draw() {
   }
     }
   }
+  function newGame(){
+    newGame();
+  }
+
+
   //food.run();
   //newGame();
   //startNewRound();
