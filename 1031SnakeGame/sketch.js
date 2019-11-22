@@ -6,7 +6,9 @@ var score = 0;
 var snake =[];
 var gameState = [];
 var numCol;
-var snakeWidth;
+var frameRate;
+var isEaten
+var runObjects
 
 function setup() {
   var cnv = createCanvas(800, 800);
@@ -25,12 +27,14 @@ function setup() {
 //  The draw function is called @ 30 fps
 function draw() {
   background(20, 50, 100);
-  runObjects();
     if(food.isEaten()){
-      food = //finish
+      food = new Food(Math.floor(random(20))*colWidth, Math.floor(random(10))*colWidth, colWidth);
+      //add a segment
+    snake.grow();
     }
+  }
 
-  frameRate(15);
+function frameRate(){
   if (gameState === 1){
     if(keyPressed === true){
       gameState = 3;
@@ -39,6 +43,7 @@ function draw() {
     background(0, 0, 0)
     text('YOU DIED')
     fill(255, 10, 40)
+}
   }
   function runSnake(){
     snake.run();
@@ -56,8 +61,6 @@ function draw() {
   //food.run();
   //newGame();
   //startNewRound();
-
-}
 
 function checkTangled(){
   return snake.tangled()

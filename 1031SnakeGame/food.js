@@ -25,7 +25,7 @@ class Food{
   }
 render(){
   fill(199, 52, 52);
-  rect(20*this.loc.x, 20*thisloc.y, this.w, this.h)
+  rect(20*this.loc.x, 20*this.loc.y, this.w, this.h)
 }
 }
 
