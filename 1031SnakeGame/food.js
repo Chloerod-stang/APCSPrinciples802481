@@ -22,11 +22,22 @@ class Food{
         this.loc.y = Math.floor(random(0,39));
         snake.segments.push(createVector(0,0));
       }
-  }
-render(){
-  fill(199, 52, 52);
-  rect(20*this.loc.x, 20*this.loc.y, this.w, this.h)
-}
-}
+    }
+    render(){
+      fill(199, 52, 52);
+      rect(20*this.loc.x, 20*this.loc.y, this.w, this.h)
+    }
+
+
+    isEaten(){
+      if (this.loc.x === snake.loc.x && this.loc.y === snake.loc.y){
+        return true
+      } else {
+          return false
+        }
+      }
+      //if the head and the food are in the same spot, return true, else return false
+
+    }
 
 //dab

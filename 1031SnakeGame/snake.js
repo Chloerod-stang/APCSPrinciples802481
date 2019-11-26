@@ -23,10 +23,22 @@ class Snake{
   //  rect(this.loc.x*this.w, this.loc.y*this.h, this.w, this.h)
 
   update(){
-    this.segments[0].add(this.vel)
+    for (var i = this.segments[i].length-1; i>0; i--){
+
+      if (i===0){ //the zero segment needs to follow head
+      } else {
+          this.segments[i].x = this.segments[i-1].x
+          this.segments[i].y = this.segments[i-1].y
+        }
+      }
+    this.loc.add(this.vel)
     //this.loc.x=this.loc.x+this.vel.x;
     //this.loc.y=this.loc.y+this.vel.y;
   }
+
+grow(){
+  segments.push(createVector(0,0));
+}
 
 render(){
   fill(this.clr);
