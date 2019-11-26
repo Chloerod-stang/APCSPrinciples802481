@@ -1,15 +1,11 @@
 class Snake{
-  constructor (x,y,w,h,size){
+  constructor (x,y,w){
     this.segments = []
-    this.loc=createVector(0,0);
+    this.loc=createVector(x,y);
     this.vel = createVector(1,0);
     this.w = w;
-    this.h = h;
-    this.size=size
+    //this.size=size
     this.clr = color(random(255), random(255), random(255));
-    for(var i=0; i<size; i++){
-      this.segments[i] = createVector(x*i, y);
-    }
   }
 
   run(){
@@ -42,8 +38,9 @@ grow(){
 
 render(){
   fill(this.clr);
+  rect(this.loc.x, this.loc.y, this.w, this.w);
   for(var i = 0; i< this.segments; i++){
-    rect(20*this.segments[i].x, 20*this.segments[i].y, this.w, this.h);
+    rect(20*this.segments[i].x, 20*this.segments[i].y, this.w, this.w);
   }
 }
   checkEdges(){

@@ -6,7 +6,6 @@ var score = 0;
 var snake =[];
 var gameState = [];
 var numCol;
-var frameRate;
 var isEaten
 var runObjects
 
@@ -18,40 +17,38 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
   frameRate(13);
-  endSnake = "no";
+//  endSnake = "no";
   fill(200, 30, 150);
-  snake = new Snake (400, 400, 10, 10, snakeWidth, color(random(255), random(255), random(255)));
+  snake = new Snake (20, 20, 10);
   food = new Food(int(random(width/25)), int(random(height/25)), color(random(0,225)))
 }
 
 //  The draw function is called @ 30 fps
 function draw() {
   background(20, 50, 100);
-    if(food.isEaten()){
+  if(food.isEaten()){
       food = new Food(Math.floor(random(20))*colWidth, Math.floor(random(10))*colWidth, colWidth);
       //add a segment
-    snake.grow();
-    }
+      snake.grow();
   }
-
-function frameRate(){
-  if (gameState === 1){
-    if(keyPressed === true){
-      gameState = 3;
-  if(endSnake === 'yes'){
-    clear();
-    background(0, 0, 0)
-    text('YOU DIED')
-    fill(255, 10, 40)
 }
-  }
+
+//function frameRate(){
+//   if (gameState === 1){
+//     if(keyPressed === true){
+//       gameState = 3;
+//   if(endSnake === 'yes'){
+//     clear();
+//     background(0, 0, 0)
+//     text('YOU DIED')
+//     fill(255, 10, 40)
+// }
+  // }
   function runSnake(){
     snake.run();
   }
   function runFood(){
     food.run();
-  }
-    }
   }
   function newGame(){
     newGame();

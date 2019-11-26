@@ -35,9 +35,15 @@ class Food{
       } else {
           return false
         }
+        if (this.loc.head === this.loc.food){
+          return true
+        } else {
+          return false
+        }
+        //if the head and the food are in the same spot, return true, else return false
       }
-      //if the head and the food are in the same spot, return true, else return false
+
 
     }
 
-//dab
+//++++++++++++++++++++end of food class
