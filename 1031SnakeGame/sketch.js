@@ -18,15 +18,15 @@ function setup() {
   background(5, 5, 5);
   frameRate(11);
   fill(200, 30, 150);
-  snake = new Snake (20, 20, 10);
-  food = new Food(Math.floor(random(numCol)*snakeWidth), Math.floor(random(numCol)*snakeWidth), snakeWidth);
+  snake = new Snake (Math.floor(random(numCol))*snakeWidth, Math.floor(random(numCol))*snakeWidth, snakeWidth);
+  food = new Food(Math.floor(random(numCol))*snakeWidth, Math.floor(random(numCol))*snakeWidth, snakeWidth);
 }
 
 //  The draw function is called @ 30 fps
 function draw() {
   background(20, 50, 100);
   if(food.isEaten()){
-      food = new Food(Math.floor(random(numCol)*snakeWidth), Math.floor(random(numCol)*snakeWidth), snakeWidth, 2);
+      food = new Food(Math.floor(random(numCol))*snakeWidth, Math.floor(random(numCol))*snakeWidth, snakeWidth, 2);
       //add a segment
       snake.grow();
   }
@@ -65,7 +65,9 @@ function keyPressed(){
     snake.vel.x= -1*snakeWidth;
     snake.vel.y= 0;
 
-  } else if (keyCode === RIGHT_ARROW) {
+  }
+
+  if (keyCode === RIGHT_ARROW) {
     snake.vel.x=1*snakeWidth;
     snake.vel.y=0;
   }
@@ -74,10 +76,16 @@ function keyPressed(){
     snake.vel.x= 0;
     snake.vel.y= 1*snakeWidth;
 
-  } else if (keyCode === UP_ARROW) {
+  }
+   if (keyCode === UP_ARROW) {
     snake.vel.x= 0;
     snake.vel.y= -1*snakeWidth;
   }
+
+  if (keyCode === 32) {
+   snake.vel.x = 0;
+   snake.vel.y = 0;
+ }
 
   //adjust snake vel
 }

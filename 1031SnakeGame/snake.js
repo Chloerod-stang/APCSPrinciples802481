@@ -19,22 +19,21 @@ class Snake{
   //  rect(this.loc.x*this.w, this.loc.y*this.h, this.w, this.h)
 
   update(){
-    for (var i = this.segments.length-1; i > 0; i--){
 
-      if (i===0){ //the zero segment needs to follow head
+    if(this.segments.length > 0){
+      this.segments[0].x = this.loc.x;
+      this.segments[0].y = this.loc.y;
+      for (var i = this.segments.length-1; i > 0; i--){
+            this.segments[i].x = this.segments[i-1].x
+            this.segments[i].y = this.segments[i-1].y
+          }
+    }
 
-      } else {
-          this.segments[i].x = this.segments[i-1].x
-          this.segments[i].y = this.segments[i-1].y
-        }
-      }
     this.loc.add(this.vel)
-    //this.loc.x=this.loc.x+this.vel.x;
-    //this.loc.y=this.loc.y+this.vel.y;
   }
 
 grow(){
-  segments.push(createVector(0,0));
+  this.segments.push(createVector(0,0));
 }
 
 render(){
