@@ -3,9 +3,9 @@
 //  This is a comment
 //  The setup function function is called once when your program begins
 var score = 0;
-var snake =[];
-var gameState = [];
-var numCol;
+var snake;
+var gameState;
+var numCol, snakeWidth;
 var isEaten
 var runObjects
 
@@ -16,40 +16,24 @@ function setup() {
   numCol= width/snakeWidth;
   cnv.position((windowWidth-width)/2, 30);
   background(5, 5, 5);
-  frameRate(13);
-//  endSnake = "no";
+  frameRate(11);
   fill(200, 30, 150);
   snake = new Snake (20, 20, 10);
-  food = new Food(int(random(width/25)), int(random(height/25)), color(random(0,225)))
+  food = new Food(Math.floor(random(numCol)*snakeWidth), Math.floor(random(numCol)*snakeWidth), snakeWidth);
 }
 
 //  The draw function is called @ 30 fps
 function draw() {
   background(20, 50, 100);
   if(food.isEaten()){
-      food = new Food(Math.floor(random(20))*colWidth, Math.floor(random(10))*colWidth, colWidth);
+      food = new Food(Math.floor(random(numCol)*snakeWidth), Math.floor(random(numCol)*snakeWidth), snakeWidth, 2);
       //add a segment
       snake.grow();
   }
+  snake.run();
+  food.run();
 }
 
-//function frameRate(){
-//   if (gameState === 1){
-//     if(keyPressed === true){
-//       gameState = 3;
-//   if(endSnake === 'yes'){
-//     clear();
-//     background(0, 0, 0)
-//     text('YOU DIED')
-//     fill(255, 10, 40)
-// }
-  // }
-  function runSnake(){
-    snake.run();
-  }
-  function runFood(){
-    food.run();
-  }
   function newGame(){
     newGame();
   }
@@ -78,21 +62,21 @@ function newGame(){
 
 function keyPressed(){
   if (keyCode === LEFT_ARROW) {
-    snake.vel.x= -1;
+    snake.vel.x= -1*snakeWidth;
     snake.vel.y= 0;
 
   } else if (keyCode === RIGHT_ARROW) {
-    snake.vel.x=1;
+    snake.vel.x=1*snakeWidth;
     snake.vel.y=0;
   }
 
   if (keyCode === DOWN_ARROW) {
     snake.vel.x= 0;
-    snake.vel.y= 1;
+    snake.vel.y= 1*snakeWidth;
 
   } else if (keyCode === UP_ARROW) {
     snake.vel.x= 0;
-    snake.vel.y= -1;
+    snake.vel.y= -1*snakeWidth;
   }
 
   //adjust snake vel
