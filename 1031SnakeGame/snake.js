@@ -39,8 +39,8 @@ grow(){
 render(){
   fill(200, 220, 20);
   rect(this.loc.x, this.loc.y, this.w, this.w);
-  for(var i = 0; i< this.segments; i++){
-    rect(20*this.segments[i].x, 20*this.segments[i].y, this.w, this.w);
+  for(var i = 0; i< this.segments.length; i++){
+    rect(this.segments[i].x, this.segments[i].y, this.w, this.w);
   }
 }
   checkEdges(){
