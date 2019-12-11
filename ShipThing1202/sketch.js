@@ -2,45 +2,37 @@
 // 	Date or version number
 
 //  The setup function function is called once when your program begins
-var ship =[];
-var attractor;
-var repeller;
-// var mainBall;
-// var paddle;
-// var mainShips;
-
+var ships = [];
+var planet;
+var x = 1; //user entered number of balls page dialog
 function setup() {
-  var cnv = createCanvas(800,800);
-  cnv.position((windowWidth-width)/2,30);
-  background(10,10,10);
-  fill(100,100,100)
-  attractor = new Attractor(x, y, dx, dy);
-  repeller = new Repeller(x, y, dx, dy);
+ var cnv = createCanvas(800, 800);
+ cnv.position((windowWidth-width)/2, 30);
+ background(5, 5, 5);
+ fill(200, 30, 150);
+ loadAll(x);
 }
-
+ 
+function loadAll(n){
+ for(q=0;q<x;q++){
+   planet = new Planet(100, 500, 50, 50, -1);
+   ships[q] = new ship(random(800), random(800), random(-3, 3), random(-3, 3), q);
+ }
+}
+ 
+ 
 function draw() {
-  background(10, 10, 10, 50)
-  // mainShips.run();
-  runShip();
-  runAttractor();
-  runRepeller();
-
-
-
-  // runPaddle();
+ background(5, 5, 5, 60);
+ for(var i = 0; i < ships.length; i++){
+   ships[i].run();
+ } planet.run();
 }
-
-function loadShip(n) {
-  fill(80, 46, 255)
-  // mainShip = new Ship(width/2, height/2, random(-2,2), ramdom(-2,2))  // 40, 40
-  // paddle = new Paddle(random(width), random(height), 20, 10)
-  // for(var i = 0; i<10; i++) {
-  //   ships[i] = new Ships(random(width), random(height), random(-5,5), random(-5,5))
-  }
+ 
+function shipsDraw(){
+ //background(5,5,5)//get trails back but just a little bit
+if (this.id > -1){
+ for(i=0;i<x;i++){
+ships[i].run();
+ }
 }
-
-// function runShips(){
-//   for(var i = 0; i < ships.length; i++){
-//     ships[i].run();
-//   }
-// }
+}
